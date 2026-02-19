@@ -1,0 +1,26 @@
+# Build
+/target/
+
+# Env and secrets (never commit keys)
+.env
+config.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+*.pdb
+
+# Captured samples for parse testing
+samples/
+
+# Cargo (optional: uncomment to ignore)
+# Cargo.lock

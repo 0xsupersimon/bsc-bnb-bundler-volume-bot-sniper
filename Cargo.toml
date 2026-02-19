@@ -1,0 +1,19 @@
+[package]
+name = "bsc-sniper-rs"
+version = "0.1.0"
+edition = "2021"
+description = "BSC 0-block sniper (Flap / FourMeme) — Rust port"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+ethers = { version = "2.0", features = ["ws", "rustls"] }
+tokio = { version = "1", features = ["full"] }
+dotenvy = "0.15"
+hex = "0.4"
+anyhow = "1"
+thiserror = "1"
+futures = "0.3"
+futures-util = "0.3"
+tokio-tungstenite = { version = "0.21", features = ["rustls-tls-webpki-roots"] }
+async-stream = "0.3"
+serde_json = "1"

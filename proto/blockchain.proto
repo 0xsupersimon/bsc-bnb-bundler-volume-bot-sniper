@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package blockchain;
+
+service Gateway {
+  rpc SendTx (SendTxRequest) returns (SendTxReply) {}
+}
+
+message SendTxRequest {
+  string transaction = 1;
+}
+
+message SendTxReply {
+  string tx_hash = 1;
+}
