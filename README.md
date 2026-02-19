@@ -1,83 +1,40 @@
-## BNB Bundler & Volume bot (BNB Chain - fourmeme(four.meme) & basememe(base.meme))
+# BNB Sniper Bot · BSC Sniper Bot · BNB Volume Bot · BSC Volume Bot · BNB Bundler Bot · BSC Bundler Bot
 
-FourMeme(four.meme) & basememe(base.meme) BNB Bundler & Volume bot is a modular, CLI-driven trading toolkit tailored for the Four.meme ecosystem on BNB Chain. It includes specialized modules for mirroring wallets, batching routes, and simulating/measuring volume — all powered directly on-chain with no third‑party market data services.
+**BNB sniper bot** and **BSC sniper bot** for zero/first-block sniping. **BNB volume bot** and **BSC volume bot** for bundling and volume on FourMeme (four.meme) and Flap (flap.sh) on BNB/BSC chain.
+
+---
+
+## Overview
+
+- **BNB sniper bot / BSC sniper bot** — Zero-block and first-block sniping on BNB Chain and BSC
+- **BNB bundler bot / BSC bundler bot** — Bundle create + buy transactions
+- **BNB volume bot / BSC volume bot** — Volume and dev-buy / no–dev-buy token creation on FourMeme & Flap
+
+Supported: **four.meme** (FourMeme) and **flap.sh** (Flap) on BNB/BSC.
+
+---
 
 ## Contact
 
-If you have any question or need help, contact here: [Telegram](https://t.me/satscorder) | [Twitter](https://x.com/satcorder33)
+Questions or need help: [Telegram](https://t.me/shiny0103) | [Twitter](https://x.com/0xMurkX)
 
-## Verified Token
+---
 
-- Dev buy(https://gmgn.ai/bsc/token/0xa10693bb3e3ef2db71330a96c4f9ceb560a84444)
+## Bundled Token
 
-- Without Dev buy(https://gmgn.ai/bsc/token/0x0e3fe42e31668e149045f11fe57c406e920a4444)
+- Dev buy: [gmgn.ai/bsc/token/0xa10693bb3e3ef2db71330a96c4f9ceb560a84444](https://gmgn.ai/bsc/token/0xa10693bb3e3ef2db71330a96c4f9ceb560a84444)
+- Without Dev buy: [gmgn.ai/bsc/token/0x0e3fe42e31668e149045f11fe57c406e920a4444](https://gmgn.ai/bsc/token/0x0e3fe42e31668e149045f11fe57c406e920a4444)
 
-## Modules at a glance
-- **Bundler**: Execute predefined swap routes (e.g., `WBNB → TOKEN`) with timing controls; designed to extend toward multicalls.
-- **Volume Bot**: Programmatic buy/sell loops at a set cadence for liquidity/organic activity testing.
-- **Notifications**: Optional Telegram alerts for major lifecycle events.
-- **Risk Controls**: Allow/deny lists, max spend ceilings, and basic MEV‑aware settings.
+---
 
-## How it works
+## Zero/First Block Sniping
 
-### Bundler flow
-- Read a sequence of routes from config → execute each respecting slippage/deadline settings → suitable base for multicall-style extensions.
+- Create tx: [bscscan.com/tx/0x18a0331becde43f0408f1fecaddf7e75dba6399ca5a32a6bfbe2e968639f9112](https://bscscan.com/tx/0x18a0331becde43f0408f1fecaddf7e75dba6399ca5a32a6bfbe2e968639f9112)
+- Buy tx: [bscscan.com/tx/0x68895dd51a888984bc2e8dd22d2ff37d10b2345d848eeb6704644d9f4e404d4c](https://bscscan.com/tx/0x68895dd51a888984bc2e8dd22d2ff37d10b2345d848eeb6704644d9f4e404d4c)
 
-### Volume Bot flow
-- Loop on an interval → small buys → approve when needed → partial or full sells → repeat with built‑in rate limiting.
+![Sniper](sniper.png)
 
-## Getting started
 
-### Prerequisites
-- Node.js 18.17 or newer
-- A BNB Chain RPC endpoint
-- A funded wallet private key
+---
 
-### Install dependencies
-```bash
-npm install
-```
-
-### Environment setup
-Copy `env.example` to `.env` and populate the required values. PancakeV2/WBNB mainnet defaults are provided. To enable Telegram notifications (optional), add:
-```
-TELEGRAM_BOT_TOKEN=123:ABC
-TELEGRAM_CHAT_ID=123456789
-```
-
-### Sample configurations
-You can start from the provided examples and tailor them to your needs:
-- `config.sniper.example.json`
-- `config.copy.example.json`
-- `config.bundle.example.json`
-- `config.volume.example.json`
-
-## Build and run
-```bash
-npm run build
-# Sniper (dry-run recommended first)
-node dist/index.js sniper -c config.sniper.example.json --dry-run
-
-# Copy-trader
-node dist/index.js copy -c config.copy.example.json
-
-# Bundler
-node dist/index.js bundle -c config.bundle.example.json
-
-# Volume bot
-node dist/index.js volume -c config.volume.example.json
-```
-
-Tip: All commands accept standard Node/CLI flags and module‑specific options (see inline `--help`).
-
-## Configuration and safety tips
-- Start in dry‑run mode; scale notional size gradually.
-- Maintain deny lists and confirm token/router addresses before enabling live trades.
-- For fast markets, sniper slippage of 3–8% (300–800 bips) is common; test first.
-- For copy‑trading, set both per‑trade caps and a daily max exposure.
-
-## Security best practices
-- Never commit secrets or private keys.
-- Use a dedicated hot wallet for experimentation.
-- Double‑check token and router contract addresses.
-- Prefer dry‑run first, then small sizes in production.
+*BNB sniper bot · BSC sniper bot · BNB volume bot · BSC volume bot · BNB bundler bot · BSC bundler bot — FourMeme · Flap · BNB Chain · BSC*
